@@ -8,7 +8,7 @@ las pistas y aprender cómo usar los comandos básicos de Linux en el proceso.
 Si estás usando un Linux recién instalado o un Live CD, deberías empezar instalando
 Git primero (`sudo apt-get install git` en Ubuntu). Abre una terminal e introduce:
 
-    git clone https://github.com/pushingice/scavenger-hunt.git
+    git clone https://github.com/Hodr25/busqueda-del-tesoro.git
     cd busqueda-tesoro
 
 Primero, elige un número secreto para compartir con tu equipo,
