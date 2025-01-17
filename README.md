@@ -1,99 +1,99 @@
-# scavenger-hunt #
+# busqueda-del-tesoro #
 
-This is a scavenger hunt to learn Linux commands. Our goal is to find all
-the clues and learn how to use basic Linux commands in the process.
+Esto es un juego de Búsqueda del Tesoro en comandos Linux. Nuestra meta es encontrar todas
+las pistas y aprender cómo usar los comandos básicos de Linux en el proceso.
 
-## Setup ##
+## Preparación ##
 
-If you are using a new Linux install or Live CD, you may need to install
-Git first (`sudo apt-get install git` on Ubuntu). Open a terminal and type:
+Si estás usando un Linux recién instalado o un Live CD, deberías empezar instalando
+Git primero (`sudo apt-get install git` en Ubuntu). Abre una terminal e introduce:
 
-    git clone https://github.com/pushingice/scavenger-hunt.git
-    cd scavenger-hunt
+    git clone https://github.com/Hodr25/busqueda-del-tesoro.git
+    cd busqueda-tesoro
 
-First, choose a secret number to share with your team,
-or keep to yourself if you are working alone. Don't enter any extra spaces or non-number characters. Write down your secret number. The secret number makes your clues unique, so other teams can't look over your shoulder.
-Then type:
+Primero, elige un número secreto para compartir con tu equipo,
+o quédatelo para tí si trabajas solo. No introduzcas ningún espacio extra o carácteres no-numéricos. Escribe
+debajo tu número sectreo. El número secreto crea tus pistas únicas, por lo que otros equipos no podrán mirar sobre tus hombros.
+Después escribe:
 
-    python generate_clues.py [secret_number]
+    python generar_pistas.py [número_secreto]
 
-NOTE: On some older systems 'python' may need to be typed as 'python3'.
+NOTA: En algunos sistemas 'python' deberá escribirse como 'python3'.
 
-Any time we enclose something in square brackets, you need to replace it
-with an actual value (called an argument). For example, to get started I
-might type:
+Cada vez que encerramos algo en corchetes, necesitas reemplazarlo por
+un valor real (llamado argumento). Por ejemplo, para empezar yo
+podría poner:
 
-    python generate_clues.py 42
+    python generar_pistas.py 42
 
-This will create a subdirectory called `clues`. Be sure to keep this file
-(called the README) open in a separate viewer.
+Esto creará un subdirectorio llamado `pistas`. Asegurate de mantener este archivo
+(también llamado README) abierto en un visualizador a parte.
 
-### Dictionary Location ###
+### Localización del Diccionario ###
 
-This code is tested on Ubuntu 22.04. If you get an error about being unable
-to find your dictionary, try the following commands
+Este código se ha probado en un Ubuntu 22.04. Si tu tienes un error acerca de no ser capaz
+de encontrar tu diccionario, prueba el siguiente comando:
 
     cd /
     find . -name words
 
-Change the value of the 'conf' file to the location of your dictionary.
+Cambia el valor dentro del archivo 'conf' para localizar tu diccionario.
 
-## Reference ##
+## Referencia ##
 
-If you want to learn more about Linux when you are finished, or need a reference
-during the hunt, go here: http://www.tldp.org/LDP/intro-linux/html/index.html.
+Si quieres aprender más acerca de Linux cuando hayas terminado, o necesitas una referencia
+durante la búsqueda, visita este enlace: http://www.tldp.org/LDP/intro-linux/html/index.html.
 
-### Clue 1: The Hunt Begins ###
+### Pista 1: Que comienze la caza ###
 
 #### `man` ####
 
-The first command we are going to learn is `man`, which is short for manual.
-Typing `man [command]` will give you a help page (usually called a manpage)
-for most commands.
+El primer comando que vamos a aprender es `man`, que es la abreviación de manual.
+Ecribiendo `man [comando]` mostrará un manual o instrucciones para la mayoría de comandos
 
 #### `ls` ####
 
-The next command we need to learn is `ls` (list). Type `man ls` and read the
-description. Press `q` to exit. Then type `ls` and you should see something
-like this:
+El siguiente comando que necesitaremos aprender es `ls` (listar). Escribe `man ls` y lee la
+descripción. Pulsa `q` para salir. luego escribe `ls` y deberías ver algo similar a esto:
 
-    APPENDIX.md clues generate_clues.py LICENSE.md next_clue.py README.md
+    APPENDIX.md pistas generate_pistas.py LICENSE.md next_pista.py README.md
 
-Items which are blue are directories and everything else is a file. Any time
-you need to know which files and directories are available, type `ls`.
+Aquello que está en azul son directorios y todo lo demás son archivos. Cada vez
+que necesites saber qué archivos y directorios tienes disponible, pon `ls`.
 
 #### `cd` ####
 
-We need a couple more tools before we can start clue hunting. To change to
-another directory we use `cd` (change directory). You may notice that
-`man cd` doesn't work. Sometimes there is no manpage for a command. In that
-case google is your friend. Changing directories is pretty simple:
+Necesitaremos aprender un par de herramientas más antes de que podamos empezar la caza y 
+busqueda de las pistas. Para cambiar a otro directorio, usaremos `cd` (cambiar de directorio).
+Habrás notado que `man cd` no funciona. Algunas veces no existe una guía para un comando. En esos
+casos google es nuestro mejor amigo. Cambiar de directorios es bastante simple:
 
-    cd clues
+    cd pistas
 
-This puts us in the clues directory. To go up a directory, we can do this:
+Esto nos meterá en el directorio de pistas. Para ir un directorio por encima, o el directorio anterior,
+podemos escribir el siguiente comando:
 
     cd ..
 
-If you ever get lost, just do
+Si alguna vez te pierdes, siempre puedes poner lo siguiente:
 
-    cd ~/scavenger-hunt
+    cd ~/busqueda-tesoro
 
-to return home. If you `cd` to the `clues` directory and do an `ls`, you
-will notice that there are a lot of clue directories. Most of them contain
-fake clues. Throughout our hunt we will be looking for real clues. Using
-`cd`, navigate to `clues/12345` and type `ls`. You should see a single
-file named `clue`.
+Para volver tu directorio. Si haces un `cd` hacia el directorio `pistas` y haces un `ls`, te
+darás cuenta que hay nn porrón de directorios. La mayoría de ellos tienen
+pistas falsas. Sin envargo para nuestra caza buscaremos aquellas pistas reales. Usando
+`cd`, navegaremos a `pistas/12345` y escribiendo `ls`. Deberías ver un único
+archivo llamado `pista`.
 
 #### `cat` ####
 
-Finally we need to be able to look at our clues. First read the manpage for
-`cat`, then do:
+Finalmente necesitaremos ser capaces de ver a través de pistas. Primero lee la guía
+`cat`, posteriormente haz:
 
-    cat clue
+    cat pista
 
-This should list the clue in your terminal. From now on, everything we need
-will be contained in these clue files. It's a good idea to keep track of
-all the clue folders (like `123456`) on a piece of paper. You can also do
-things like copy all the clue files to your home folder, or cut and paste
-the clue text into another file.
+Esto debería listar la pista en tu terminal. Por el momento, Todo lo que necesitamos
+estará en el contenido del archivo pista. Es una buena idea registrar el rastro a través de los archivos de
+pistas (como `123456`) en un trozo de papel. También podrías probar
+cosas como copiar todos los archivos pista a tu directorio personal, o cortar y pegar
+el texto de la pista a otro archivo de texto.
